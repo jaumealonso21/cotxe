@@ -1,0 +1,21 @@
+
+/* 
+    Created on : 24/04/2017, 17:49:01
+    Author     : daw
+*/
+#botoCaptura {
+    height: 20%;
+    width: 20%;
+    background-color: black;
+    color: white;
+}
+#botoRuta {
+    height: 20%;
+    width: 20%;
+    background-color: cyan;
+    color: black;
+    display: none;
+}
+#contenidor {
+/*    display: none;*/
+}
