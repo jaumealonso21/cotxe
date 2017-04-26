@@ -54,8 +54,8 @@ $(function () {
                     el: '#map',
                     lat: lat,
                     lng: lng,
-                    height: "300px",
-                    width: "400px"
+                    height: "400px",
+                    width: "350px"
                 });
                 map.addMarker({lat: lat, lng: lng});  // marcador en [lat, lng]
             },
@@ -74,7 +74,7 @@ $(function () {
         geoloc();
     }
     function marcar() {
-        botoRuta.hide();
+        //botoRuta.hide();
         enlazar();
         //contenidor.show();
         //geolocalizar();
