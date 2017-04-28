@@ -21,3 +21,8 @@ h1, #botoCaptura, #botoRuta, #map {
     color: black;
     display: none;
 }
+#menus {
+    display: none;
+    margin: 5% auto;
+    text-align: center;
+}
