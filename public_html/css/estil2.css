@@ -1,0 +1,23 @@
+
+/* 
+    Created on : 24/04/2017, 17:49:01
+    Author     : daw
+*/
+h1, #botoCaptura, #botoRuta, #map {
+    margin: 5% auto;
+    text-align: center;
+}
+#botoCaptura, #botoRuta {
+    height: 40%;
+    width: 30%;
+    border-radius: 5px;
+}
+#botoCaptura {
+    background-color: black;
+    color: white;
+}
+#botoRuta {
+    background-color: cyan;
+    color: black;
+    display: none;
+}
