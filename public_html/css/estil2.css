@@ -26,3 +26,11 @@ h1, #botoCaptura, #botoRuta, #map {
     margin: 5% auto;
     text-align: center;
 }
+#img1 {
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+body {
+    text-align: center;
+}
