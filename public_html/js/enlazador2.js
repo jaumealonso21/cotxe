@@ -30,7 +30,7 @@ $(function () {
     botoRuta = $('#botoRuta').on("tap", marcar);
     menus = $('#menus');
     i = $('#img1');
-    j = 0;
+    j = 0;//Comença desde el principi
     gal = 0;//Evita errors
     menu1 = $('#menu1');
     menu2 = $('#menu2');
@@ -41,23 +41,21 @@ $(function () {
     menu2.on('tap', {msg: 1}, cambioTap);
     menu3.on('tap', {msg: 2}, cambioTap);
     titols = {
-        hosteleria: [
-            "icon""",
-        ],
+        hosteleria: [],
         paisatge: [],
         edifici: []
     };
-    var icons = {
-          parking: {
-            icon: iconBase + 'parking_lot_maps.png'
-          },
-          library: {
-            icon: iconBase + 'library_maps.png'
-          },
-          info: {
-            icon: iconBase + 'info-i_maps.png'
-          }
-        };
+//    var icons = {
+//          parking: {
+//            icon: iconBase + 'parking_lot_maps.png'
+//          },
+//          library: {
+//            icon: iconBase + 'library_maps.png'
+//          },
+//          info: {
+//            icon: iconBase + 'info-i_maps.png'
+//          }
+//        };
     //i.html(galerias[0]);
     //Capa imatge, per fer pinch in/pinch out: shift+scroll
     i.on({
@@ -90,13 +88,24 @@ $(function () {
                 map.addMarker({
                     lat: lat,
                     lng: lng,
+                    icon: 'img/hotel.png'
                 });
                 break;
             case "P":
                 text = "Daiquiri is my favorite too!";
+                map.addMarker({
+                    lat: lat,
+                    lng: lng,
+                    icon: 'img/landscape.png'
+                });
                 break;
             case "E":
                 text = "Really? Are you sure the Cosmopolitan is your favorite?";
+                map.addMarker({
+                    lat: lat,
+                    lng: lng,
+                    icon: 'img/monument.png'
+                });
                 break;
             default:
                 text = "I have never heard of that one..";
