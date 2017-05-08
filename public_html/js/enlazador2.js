@@ -20,6 +20,7 @@ var titols = [
     ['banqueta', 'snoopy', 'margarita', 'patito'],
     ['osito', 'conejito', 'garfield', 'ositoSol']
 ];
+var zones;
 
 $(function () {
     contenidor = $('#contenidor'); //De sortida el mapa ocultat
@@ -35,19 +36,37 @@ $(function () {
     menu2 = $('#menu2');
     menu3 = $('#menu3');
     titol = $('#titol');
-     //Menus
+    //Menus
     menu1.on('tap', {msg: 0}, cambioTap);
     menu2.on('tap', {msg: 1}, cambioTap);
     menu3.on('tap', {msg: 2}, cambioTap);
+    titols = {
+        hosteleria: [
+            "icon""",
+        ],
+        paisatge: [],
+        edifici: []
+    };
+    var icons = {
+          parking: {
+            icon: iconBase + 'parking_lot_maps.png'
+          },
+          library: {
+            icon: iconBase + 'library_maps.png'
+          },
+          info: {
+            icon: iconBase + 'info-i_maps.png'
+          }
+        };
     //i.html(galerias[0]);
     //Capa imatge, per fer pinch in/pinch out: shift+scroll
     i.on({
         //swipeUp: cambioUp, swipeDown: cambioDown,
         swipeRight: cambioRight, swipeLeft: cambioLeft,
         singleTap: cambioTitol//, doubleTap: cambioAlbum,
-        //pinchOpen: zoomOut, pinchClose: zoomIn
+                //pinchOpen: zoomOut, pinchClose: zoomIn
     });
-    
+
     geoloc();
 
     function marcar(e) {
@@ -60,9 +79,28 @@ $(function () {
 //                alert('You clicked in this marker');
 //            }
 //        });  // pone marcador en mapa
-        i.css("display", "inline-block");
-        var img = "<img src=img/choose.png alt=choose id=img1>";
-        
+        //i.css("display", "inline-block");
+        //var img = "<img src=img/choose.png alt=choose id=img1>";
+        var text;
+        var fav = prompt("Escull la teva secció favorita", "(H)ostaleria, \n\
+(P)aisatge natural, (E)dificació d'interès");
+        switch (fav) {
+            case "H":
+                text = "Excellent choice. Martini is good for your soul.";
+                map.addMarker({
+                    lat: lat,
+                    lng: lng,
+                });
+                break;
+            case "P":
+                text = "Daiquiri is my favorite too!";
+                break;
+            case "E":
+                text = "Really? Are you sure the Cosmopolitan is your favorite?";
+                break;
+            default:
+                text = "I have never heard of that one..";
+        }
         //css({"propertyname":"value","propertyname":"value",...});
         //i.css("top":e, "");
         map.addMarker({
@@ -153,7 +191,7 @@ $(function () {
     }
     //geolocalizar();
 
-   function cambioTap(event) {
+    function cambioTap(event) {
         gal = event.data.msg;//Carrega la galeria especificada
         j = 0;//Inicialitza les imatges desde la primera
 //        i.attr('src', galerias[gal][j]);
