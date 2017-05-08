@@ -45,6 +45,9 @@ $(function () {
         paisatge: [],
         edifici: []
     };
+    var hosteleria = {};
+    var paisatge = {};
+    var edifici = {};
 //    var icons = {
 //          parking: {
 //            icon: iconBase + 'parking_lot_maps.png'
@@ -90,6 +93,7 @@ $(function () {
                     lng: lng,
                     icon: 'img/hotel.png'
                 });
+                hosteleria.push(lat, lng);
                 break;
             case "P":
                 text = "Daiquiri is my favorite too!";
